@@ -34,7 +34,7 @@ const Calendar: FC = () => {
   const [currentDate, setCurrentDate] = useState<Date>(new Date());
   const [isExpanded, setIsExpanded] = useState<boolean>(true);
   const [data, setData] = useState<RemindersData>();
-  const [currentDayEvents, setCurrentDayEvents] = useState<Reminder[]>();
+  const [currentDayEvents, setCurrentDayEvents] = useState<Reminder[]>([]);
 
   const searchParams = new URLSearchParams(window.location.search);
   const t_user_id = searchParams.get("t_user_id");
@@ -212,6 +212,7 @@ const Calendar: FC = () => {
       <p className="bold events-for-day-title">
         {currentDate.toLocaleDateString("ru", { month: "long", day: "numeric" })}
       </p>
+      {currentDayEvents.length === 0 && <p className="no-events">Сегодня событий нет</p>}
       <div className="events-for-day">
         <div className="events-list">
           {currentDayEvents?.map((ev, ix) => (

@@ -214,3 +214,11 @@
 .event-text > p {
   color: rgba(125, 125, 125, 1);
 }
+
+.no-events {
+  color: rgba(125, 125, 125, 1);
+  font-weight: 500;
+  font-size: 13px;
+  margin-left: 25px;
+  margin-top: 15px;
+}
