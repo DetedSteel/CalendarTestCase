@@ -75,7 +75,7 @@ const Calendar: FC = () => {
         const res = await axios.post(
           "https://bot-igor.ru/reminders",
           {
-            t_user_id: t_user_id,
+            t_user_id: Number(t_user_id),
           },
           {
             headers: {
